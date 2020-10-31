@@ -1,0 +1,28 @@
+{
+	"commands": [
+		{
+			"parent": "root",
+			"usage": "demo",
+			"help": "demo commands"
+		},
+		{
+			"parent": "root_demo",
+			"usage": "create",
+			"help": "demo create"
+		},
+		{
+			"parent": "root_demo_create",
+			"usage": "formula",
+			"help": "create formula",
+			"formula": {
+				"path": "demo/create/formula",
+				"bin": "formula.sh",
+				"binLinux": "formula.sh",
+				"binDarwin": "formula.sh",
+				"binWindows": "formula.bat",
+				"bundle": "${so}.zip",
+				"config": "config.json"
+			}
+		}
+	]
+}
