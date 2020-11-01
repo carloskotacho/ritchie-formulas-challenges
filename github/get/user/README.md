@@ -8,4 +8,4 @@ rit github get user
 
 ## description
 
-description of formula
+Add two positive numbers. [Challenge - Level 2 - Credentials](https://docs.ritchiecli.io/v/v2.0-pt/challenges/level-2)

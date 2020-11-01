@@ -8,4 +8,4 @@ rit math multiply numbers
 
 ## description
 
-description of formula
+Multiply two positive numbers. [Challenge - Level 4 - Encapsulation](https://docs.ritchiecli.io/v/v2.0-pt/challenges/level-4)

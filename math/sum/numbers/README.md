@@ -8,4 +8,5 @@ rit math sum numbers
 
 ## description
 
-description of formula
+Add two positive numbers. [Challenge - Level 1 - Inputs](https://docs.ritchiecli.io/v/v2.0-pt/challenges/level-1)
+

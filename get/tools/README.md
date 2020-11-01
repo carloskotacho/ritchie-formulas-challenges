@@ -8,4 +8,4 @@ rit get tools
 
 ## description
 
-description of formula
+Add two positive numbers. [Challenge - Level 3 - Conditional entries](https://docs.ritchiecli.io/v/v2.0-pt/challenges/level-3)
