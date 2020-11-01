@@ -3,7 +3,7 @@
 ## command
 
 ```bash
-rit math sum numbers
+rit node math sum numbers
 ```
 
 ## description

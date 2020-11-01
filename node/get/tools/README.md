@@ -3,7 +3,7 @@
 ## command
 
 ```bash
-rit get tools
+rit node get tools
 ```
 
 ## description

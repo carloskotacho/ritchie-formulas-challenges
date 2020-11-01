@@ -3,7 +3,7 @@
 ## command
 
 ```bash
-rit math multiply numbers
+rit node math multiply numbers
 ```
 
 ## description

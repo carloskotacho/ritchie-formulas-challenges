@@ -3,7 +3,7 @@
 ## command
 
 ```bash
-rit github get user
+rit node github get user
 ```
 
 ## description

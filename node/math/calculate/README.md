@@ -3,7 +3,7 @@
 ## command
 
 ```bash
-rit math calculate
+rit node math calculate
 ```
 
 ## description
