@@ -1,32 +1,31 @@
-:: Node parameters
-echo off
+@echo off
+
 SETLOCAL
 SET BIN_FOLDER=bin
-SET BAT_FILE=%BIN_FOLDER%\run.bat
-SET SH_FILE=%BIN_FOLDER%\run.sh
-:build
-    mkdir %BIN_FOLDER%
-    xcopy /E /I src %BIN_FOLDER%
-    cd %BIN_FOLDER%
-    call npm install --silent
-    cd ..
-    call :BAT_WINDOWS
-    call :SH_LINUX
-    call :CP_DOCKER
-    GOTO DONE
+SET BINARY_NAME=run.bat
+SET BINARY_NAME_UNIX=run.sh
+SET ENTRY_POINT=main.bat
+SET ENTRY_POINT_UNIX=main.sh
+
+:BUILD
+  mkdir %BIN_FOLDER%
+  xcopy /e/h/i/c src %BIN_FOLDER%
+  cd %BIN_FOLDER%
+  call :SH_UNIX
+  call :BAT_WINDOWS
+  GOTO EXIT
+
+:SH_UNIX
+  rename %ENTRY_POINT_UNIX% %BINARY_NAME_UNIX%
 
 :BAT_WINDOWS
-    echo @ECHO OFF > %BAT_FILE%
-    echo SET mypath=%%~dp0 >> %BAT_FILE%
-    echo start /B /WAIT node %%mypath:~0,-1%%/index.js >> %BAT_FILE%
-
-:SH_LINUX
-    echo node "$(dirname "$0")"/index.js > %SH_FILE%
-    GOTO DONE
+  rename %ENTRY_POINT% %BINARY_NAME%
 
 :CP_DOCKER
-    copy Dockerfile %BIN_FOLDER%
-    copy set_umask.sh %BIN_FOLDER%
-    GOTO DONE
+  cd ..
+  copy Dockerfile %BIN_FOLDER%
+  copy set_umask.sh %BIN_FOLDER%
 
-:DONE
+:EXIT
+  ENDLOCAL
+  exit /b

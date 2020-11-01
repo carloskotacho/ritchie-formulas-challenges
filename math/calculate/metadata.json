@@ -6,7 +6,6 @@
   "os": {
     "deps": [],
     "support": [
-      "windows",
       "mac",
       "linux"
     ]

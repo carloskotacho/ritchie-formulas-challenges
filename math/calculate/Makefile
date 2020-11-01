@@ -1,18 +1,21 @@
-# Make Run Node
+# SH
+
+BIN_FOLDER=bin
 BINARY_NAME_UNIX=run.sh
 BINARY_NAME_WINDOWS=run.bat
-BIN_FOLDER=bin
+ENTRY_POINT_UNIX=main.sh
+ENTRY_POINT_WINDOWS=main.bat
 
-build: node-build docker
+build: bash-build bat-build docker
 
-node-build:
-	mkdir -p $(BIN_FOLDER)
+bash-build:
+	mkdir $(BIN_FOLDER)
 	cp -r src/* $(BIN_FOLDER)
-	npm install --silent --no-progress --prefix $(BIN_FOLDER)
-	echo '#!/bin/sh' > $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
-	echo 'node "$$(dirname "$$0")"/index.js' >>  $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
-	echo 'node index.js' > $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
+	mv $(BIN_FOLDER)/$(ENTRY_POINT_UNIX) $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
 	chmod +x $(BIN_FOLDER)/$(BINARY_NAME_UNIX)
+
+bat-build:
+	mv $(BIN_FOLDER)/$(ENTRY_POINT_WINDOWS) $(BIN_FOLDER)/$(BINARY_NAME_WINDOWS)
 
 docker:
 	cp Dockerfile set_umask.sh $(BIN_FOLDER)
