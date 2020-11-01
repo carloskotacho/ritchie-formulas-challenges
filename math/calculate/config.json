@@ -1,11 +1,11 @@
 {
-  "dockerImageBuilder": "ritclizup/rit-shell-bat-builder",
+  "dockerImageBuilder": "ritclizup/rit-node-builder",
   "inputs": [
     {
       "cache": {
         "active": true,
         "newLabel": "Type new value. ",
-        "qty": 3
+        "qty": 1
       },
       "default": "0",
       "label": "Enter a number: ",
@@ -15,6 +15,11 @@
       "required": true
     },
     {
+      "cache": {
+        "active": true,
+        "newLabel": "Type new value. ",
+        "qty": 1
+      },
       "default": "0",
       "label": "Enter another number: ",
       "name": "number_two",

@@ -1,4 +1,4 @@
-FROM ritclizup/rit-shell-bat-runner
+FROM ritclizup/rit-node-runner
 
 USER root
 
