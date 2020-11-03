@@ -16,12 +16,20 @@ function execute(command) {
 function Run(numberOne, numberTwo, operation) {
     console.log("Number operations")
 
-    if(operation === 'sum'){
-        execute(`echo '{ "number_one": "'${numberOne}'", "number_two": "'${numberTwo}'", "operation": "'${operation}'" }' | rit math sum numbers --stdin`)
-    } else if (operation === 'multiply'){
-        execute(`echo '{ "number_one": "'${numberOne}'", "number_two": "'${numberTwo}'", "operation": "'${operation}'" }' | rit math multiply numbers --stdin`)
-    } else {
-        console.log(clc.red("(Invalid Input) Use sum or multiply!"))
+    var stdin = `echo '{ "number_one": "'${numberOne}'", "number_two": "'${numberTwo}'", "operation": "'${operation}'" }'`
+
+    switch (operation) {
+        case 'sum':
+            execute(stdin + ` | rit node math sum numbers --stdin`)
+        break;
+        case 'multiply':
+            execute(stdin + ` | rit node math multiply numbers --stdin`)
+        break;
+        case 'subtract':
+            execute(stdin + ` | rit node math subtract numbers --stdin`)
+        break;
+        default:
+            console.log(clc.red("(Invalid Input) Use sum, multiply or subtract!"))
     }
 }
 

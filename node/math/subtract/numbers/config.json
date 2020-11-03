@@ -5,7 +5,7 @@
       "cache": {
         "active": true,
         "newLabel": "Type new value. ",
-        "qty": 1
+        "qty": 3
       },
       "default": "0",
       "label": "Enter a number: ",
@@ -15,23 +15,11 @@
       "required": true
     },
     {
-      "cache": {
-        "active": true,
-        "newLabel": "Type new value. ",
-        "qty": 1
-      },
       "default": "0",
       "label": "Enter another number: ",
       "name": "number_two",
       "type": "text",
       "tutorial": "Your prefer number",
-      "required": true
-    },
-    {
-      "default": "sum",
-      "label": "Enter a operation (ex. sum, multiply or subtract): ",
-      "name": "operation",
-      "type": "text",
       "required": true
     }
   ]
